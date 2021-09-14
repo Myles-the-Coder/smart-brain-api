@@ -1,9 +1,9 @@
 import clarifi from 'clarifai'
 
-const CLARIFAI_KEY = process.env.CLARIFAI_KEY
+const API_KEY = process.env.API_KEY
 
 const app = new Clarifai.App({
-	apiKey: CLARIFAI_KEY,
+	apiKey: API_KEY,
 });
 
 const handleApiCall = (req, res) => {
