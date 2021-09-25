@@ -2,10 +2,11 @@ import { hash } from 'bcrypt-nodejs';
 
 const handleRegister = (req, res, db, bcrypt) => {
 	const { email, name, password } = req.body;
-	if (!email || !name || !password) {
+	if (!email || !password) {
 		return res.status(400).json('Incorrect Form Submission');
 	}
-	const hash = bcrypt.hashSync(password);
+
+	hash = bcrypt.hashSync(password);
 
 	db.transaction(trx => {
 		trx
